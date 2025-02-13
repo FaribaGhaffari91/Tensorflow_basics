@@ -6,3 +6,4 @@ Following resources are used in this repository:
 
 - https://www.coursera.org/learn/introduction-tensorflow
 - git clone https://github.com/https-deeplearning-ai/tensorflow-1-public
+- https://www.deeplearning.ai/

@@ -17,10 +17,11 @@ def hello_world_of_tensorflow(X, Y):
     model = tf.keras.Sequential([ # Sequential is used for defining the successive layers in tensorflow
         tf.keras.Input(shape = (1,)), # The input layer (or simply input of our NN) is a single number x
         tf.keras.layers.Dense(units = 1) #In this simple NN we have only one neuron defined by Dense (with one unit)
+        #Dense layer is a layer in which all neurons are fully connected to their adjacent layers
     ])
     
     # ----------compiling the model---------------
-    # loss function and optimizers are used to find the parameters of NN
+    # loss function and optimizers are used to find the weights and parameters of NN
     model.compile(optimizer = "sgd" , loss = 'mean_squared_error') 
 
 
@@ -28,6 +29,7 @@ def hello_world_of_tensorflow(X, Y):
     # to fit the model with corresponding X, Y, 600 epochs means that the models will 
     # try the optimizer and loss functions for 600 times to find the best parameters 
     # to calculate y' most near to expected y.
+    #Note: the process of getting close to the expected y, is called convergence
     model.fit(X,Y, epochs = 600) 
 
     #our expected values are: (-7, -22) , (15, 44)
