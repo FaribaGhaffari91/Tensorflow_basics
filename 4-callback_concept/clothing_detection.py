@@ -66,13 +66,6 @@ def main():
     
     #Printing the image (to have an over view of data)
     print(f"Label for the item number {test_index} is: {test_label[0][test_index]}")
-    np.set_printoptions(linewidth=320)
-    reshaped_image = test_set[0][test_index].reshape(28,28)
-    print(f'\nImage looks like \n\n{reshaped_image}\n\n')
-
-    plt.imshow(reshaped_image)
-    plt.colorbar()
-    plt.show()
 
 
 class epochCallback(tf.keras.callbacks.Callback):
