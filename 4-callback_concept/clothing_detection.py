@@ -20,6 +20,8 @@ def cloth_categorization():
         tf.keras.layers.Dense(128, activation = tf.nn.relu),
         tf.keras.layers.Dense(10, activation = tf.nn.softmax)
     ])
+
+    model.summary()
      
     model.compile(optimizer = tf._optimizers.Adam() , loss = 'sparse_categorical_crossentropy', metrics = ['accuracy'])
     model.fit(train_set, train_label, epochs = 100, callbacks = [epochCallback()])
@@ -76,3 +78,5 @@ class epochCallback(tf.keras.callbacks.Callback):
 
 
 main()
+
+

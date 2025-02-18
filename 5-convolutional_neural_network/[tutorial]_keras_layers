@@ -1,0 +1,57 @@
+---
+title = 'Introduction on different layers in tensorflow.keras.layers'
+
+---
+# Introduction on layers
+
+In Keras, a layer is a fundamental building block for deep learning models. Layers process input data and pass transformed output to the next layer. `tf.keras.layers` provides a variety of predefined layers to help build and train deep learning models efficiently.
+
+# Different available keras layers
+
+**1. Core Layers** These are the basic building blocks for deep learning models.
+
+- **`Dense(units, activation)`**: *Fully connected* layer where each neuron is connected to all neurons in the previous layer.
+- **`Activation(activation_function)`**: Applies an activation function (e.g., ReLU, Sigmoid, Softmax).
+- **`Flatten()`**: Flattens an input from multi-dimensional to a 1D vector (use it *before Dense layers*).
+- **`Reshape(target_shape)`**: Reshapes input tensor to a specified shape.
+- **`Dropout(rate)`**: Randomly drops a fraction of neurons to prevent overfitting.
+- **`Lambda(function)`**: Allows custom functions to be applied as a layer.
+
+**2. Convolutional Layers (For Images)** Used in CNNs for feature extraction from images.
+
+- **`Conv1D(filters, kernel_size, activation)`**: 1D convolution (for time series/text data).
+- **`Conv2D(filters, kernel_size, activation)`**: 2D convolution (for images).
+- **`Conv3D(filters, kernel_size, activation)`**: 3D convolution (for volumetric data like medical imaging).
+- **`SeparableConv2D(filters, kernel_size)`**: Depthwise separable convolution for efficiency.
+- **`DepthwiseConv2D(kernel_size)`**: Applies depthwise convolutions (used in MobileNets).
+
+**3. Pooling Layers (For Downsampling)** Used in CNNs to reduce spatial dimensions.
+
+- **`MaxPooling1D(pool_size)`**: Takes the maximum value in a window.
+- **`MaxPooling2D(pool_size)`**: Same as above but for 2D inputs.
+- **`MaxPooling3D(pool_size)`**: Same as above but for 3D inputs.
+- **`AveragePooling1D(pool_size)`**: Takes the average value in a window.
+- **`AveragePooling2D(pool_size)`**: Same as above but for 2D inputs.
+- **`GlobalMaxPooling2D()`**: Takes max across entire spatial dimensions.
+- **`GlobalAveragePooling2D()`**: Takes average across entire spatial dimensions.
+
+**4. Recurrent Layers (For Sequential Data)**
+Used in RNNs for time-series, text, and sequential data.
+
+- **`SimpleRNN(units, activation)`**: Basic recurrent layer.
+- **`LSTM(units, activation)`**: Long Short-Term Memory layer (handles long-range dependencies).
+- **`GRU(units, activation)`**: Gated Recurrent Unit (efficient alternative to LSTM).
+- **`Bidirectional(layer)`**: Wraps an RNN to process input in both directions.
+- **`TimeDistributed(layer)`**: Applies a layer to each time step independently.
+
+**5. Normalization Layers** Used to normalize data within a network.
+
+- **`BatchNormalization()`**: Normalizes activations to improve training.
+- **`LayerNormalization()`**: Normalizes across features instead of batch dimension.
+
+**6. Embedding Layer (For Text/NLP)**
+- **`Embedding(input_dim, output_dim)`**: Converts words (integers) into dense vectors.
+
+**7. Attention Layers**
+- **`Attention()`**: Computes attention scores between two inputs.
+- **`MultiHeadAttention(num_heads, key_dim)`**: Multi-head self-attention (used in Transformers).
