@@ -49,7 +49,7 @@ def cloth_categorization_convolutional_NN():
 class callBack_CNN(tf.keras.callbacks.Callback):
     def on_epoch_end(self, epoch, logs = None):
         if logs['accuracy'] > 0.85:
-            print("Accuracy is higher than0.85, training can be cancelled now!!!")
+            print("Accuracy is higher than 0.85, training can be cancelled now!!!")
             self.model.stop_training = True
 
 cloth_categorization_convolutional_NN()
